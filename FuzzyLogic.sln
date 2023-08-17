@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuzzyLogic", "FuzzyLogic\FuzzyLogic.csproj", "{E322C064-0826-4640-8B1E-281E0C7FC211}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuzzyLogic.Test", "FuzzyLogic.Test\FuzzyLogic.Test.csproj", "{90AD20D0-CEFE-486B-9F25-4F3154799B2F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E322C064-0826-4640-8B1E-281E0C7FC211}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E322C064-0826-4640-8B1E-281E0C7FC211}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E322C064-0826-4640-8B1E-281E0C7FC211}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E322C064-0826-4640-8B1E-281E0C7FC211}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90AD20D0-CEFE-486B-9F25-4F3154799B2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90AD20D0-CEFE-486B-9F25-4F3154799B2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90AD20D0-CEFE-486B-9F25-4F3154799B2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90AD20D0-CEFE-486B-9F25-4F3154799B2F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
