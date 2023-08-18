@@ -2,6 +2,6 @@
 {
     public interface IMemberFunction
     {
-        internal double Evaluate(double x);
+        public double Evaluate(double x);
     }
 }

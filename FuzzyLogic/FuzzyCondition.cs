@@ -26,19 +26,23 @@ namespace FuzzyLogic
             return _evaluationFunc();
         }
 
-        public static FuzzyCondition operator&(FuzzyCondition a, FuzzyCondition b)
+        internal static FuzzyCondition And(FuzzyCondition a, FuzzyCondition b)
         {
             return new FuzzyCondition(() => Math.Min(a.Evaluate(), b.Evaluate()));
         }
         
-        public static FuzzyCondition operator|(FuzzyCondition a, FuzzyCondition b)
+        internal static FuzzyCondition Or(FuzzyCondition a, FuzzyCondition b)
         {
             return new FuzzyCondition(() => Math.Max(a.Evaluate(), b.Evaluate()));
         }
         
-        public static FuzzyCondition operator!(FuzzyCondition a)
+        internal static FuzzyCondition Not(FuzzyCondition a)
         {
-            return new FuzzyCondition(() => 1 - a.Evaluate());
+            return new FuzzyCondition(() =>
+            {
+                var value = a.Evaluate();
+                return 1 - value;
+            });
         }
     }
 }

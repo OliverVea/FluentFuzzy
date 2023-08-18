@@ -4,6 +4,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuzzyLogic", "FuzzyLogic\Fu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuzzyLogic.Test", "FuzzyLogic.Test\FuzzyLogic.Test.csproj", "{90AD20D0-CEFE-486B-9F25-4F3154799B2F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuzzyLogic.Visualization", "FuzzyLogic.Visualization\FuzzyLogic.Visualization.csproj", "{CFAF3451-4EC3-4328-A116-F9C2EA5EE884}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuzzyLogic.Visualization.Test", "FuzzyLogic.Visualization.Test\FuzzyLogic.Visualization.Test.csproj", "{DBD90567-C27D-493A-8426-0988E99A9B2A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,13 @@ Global
 		{90AD20D0-CEFE-486B-9F25-4F3154799B2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90AD20D0-CEFE-486B-9F25-4F3154799B2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90AD20D0-CEFE-486B-9F25-4F3154799B2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFAF3451-4EC3-4328-A116-F9C2EA5EE884}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFAF3451-4EC3-4328-A116-F9C2EA5EE884}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFAF3451-4EC3-4328-A116-F9C2EA5EE884}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFAF3451-4EC3-4328-A116-F9C2EA5EE884}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBD90567-C27D-493A-8426-0988E99A9B2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBD90567-C27D-493A-8426-0988E99A9B2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBD90567-C27D-493A-8426-0988E99A9B2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBD90567-C27D-493A-8426-0988E99A9B2A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

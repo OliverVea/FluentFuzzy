@@ -9,12 +9,14 @@ namespace FuzzyLogic
         private readonly Func<double> _valueFunction;
         
         private readonly Dictionary<int, IMemberFunction> _memberFunctions = new Dictionary<int, IMemberFunction>();
+        public IReadOnlyDictionary<int, IMemberFunction> MemberFunctions => _memberFunctions;
 
         public FuzzyInput(Func<double> valueFunction)
         {
             _valueFunction = valueFunction;
         }
-        
+
+
         public void Set(int antecedent, IMemberFunction memberFunction)
         {
             if (_memberFunctions.ContainsKey(antecedent))
@@ -27,6 +29,14 @@ namespace FuzzyLogic
         {
             if (_memberFunctions.TryGetValue(antecedent, out var memberFunction))
                 return new FuzzyCondition(memberFunction, _valueFunction);
+        
+            throw new ArgumentException($"Member function of {antecedent} is not implemented.", nameof(antecedent));
+        }
+
+        public FuzzyCondition IsNot(int antecedent)
+        {
+            if (_memberFunctions.TryGetValue(antecedent, out var memberFunction))
+                return FuzzyCondition.Not(new FuzzyCondition(memberFunction, _valueFunction));
         
             throw new ArgumentException($"Member function of {antecedent} is not implemented.", nameof(antecedent));
         }
