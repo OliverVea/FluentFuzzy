@@ -1,12 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuzzyLogic", "FuzzyLogic\FuzzyLogic.csproj", "{E322C064-0826-4640-8B1E-281E0C7FC211}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuzzyLogic", "src\FuzzyLogic\FuzzyLogic.csproj", "{E322C064-0826-4640-8B1E-281E0C7FC211}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuzzyLogic.Test", "FuzzyLogic.Test\FuzzyLogic.Test.csproj", "{90AD20D0-CEFE-486B-9F25-4F3154799B2F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuzzyLogic.Test", "test\FuzzyLogic.Test\FuzzyLogic.Test.csproj", "{90AD20D0-CEFE-486B-9F25-4F3154799B2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuzzyLogic.Visualization", "FuzzyLogic.Visualization\FuzzyLogic.Visualization.csproj", "{CFAF3451-4EC3-4328-A116-F9C2EA5EE884}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuzzyLogic.Visualization", "src\FuzzyLogic.Visualization\FuzzyLogic.Visualization.csproj", "{CFAF3451-4EC3-4328-A116-F9C2EA5EE884}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuzzyLogic.Visualization.Test", "FuzzyLogic.Visualization.Test\FuzzyLogic.Visualization.Test.csproj", "{DBD90567-C27D-493A-8426-0988E99A9B2A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuzzyLogic.Visualization.Test", "test\FuzzyLogic.Visualization.Test\FuzzyLogic.Visualization.Test.csproj", "{DBD90567-C27D-493A-8426-0988E99A9B2A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{16D1C450-9355-4937-A4D7-54D33587DBFE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{0DEED023-7111-48C0-B8E6-906A9E7EFD08}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,5 +34,11 @@ Global
 		{DBD90567-C27D-493A-8426-0988E99A9B2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBD90567-C27D-493A-8426-0988E99A9B2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBD90567-C27D-493A-8426-0988E99A9B2A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E322C064-0826-4640-8B1E-281E0C7FC211} = {16D1C450-9355-4937-A4D7-54D33587DBFE}
+		{CFAF3451-4EC3-4328-A116-F9C2EA5EE884} = {16D1C450-9355-4937-A4D7-54D33587DBFE}
+		{90AD20D0-CEFE-486B-9F25-4F3154799B2F} = {0DEED023-7111-48C0-B8E6-906A9E7EFD08}
+		{DBD90567-C27D-493A-8426-0988E99A9B2A} = {0DEED023-7111-48C0-B8E6-906A9E7EFD08}
 	EndGlobalSection
 EndGlobal

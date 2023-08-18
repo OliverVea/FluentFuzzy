@@ -18,7 +18,7 @@
     </ItemGroup>
     
     <ItemGroup>
-        <ProjectReference Include="..\FuzzyLogic\FuzzyLogic.csproj" />
+        <ProjectReference Include="..\..\src\FuzzyLogic\FuzzyLogic.csproj" />
     </ItemGroup>
 
 </Project>
