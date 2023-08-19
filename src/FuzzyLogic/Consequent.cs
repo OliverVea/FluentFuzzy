@@ -4,9 +4,9 @@ using FuzzyLogic.Interfaces;
 
 namespace FuzzyLogic
 {
-    public class Consequent
+    internal class Consequent : IConsequent
     {
-        private readonly List<FuzzyCondition> _fuzzyConditions = new List<FuzzyCondition>();
+        private readonly List<ICondition> _fuzzyConditions = new List<ICondition>();
 
         private readonly IHasCentroid _memberFunction;
         
@@ -15,9 +15,9 @@ namespace FuzzyLogic
             _memberFunction = memberFunction;
         }
 
-        public void Add(FuzzyCondition fuzzyCondition)
+        void IConsequent.Add(ICondition condition)
         {
-            _fuzzyConditions.Add(fuzzyCondition);
+            _fuzzyConditions.Add(condition);
         }
 
         internal Centroid GetCentroid()

@@ -2,7 +2,7 @@
 
 namespace FuzzyLogic.Test;
 
-public partial class FuzzyRulesTests
+public partial class FuzzyRuleTests
 {
     private static int _next;
     private static int Next => _next++;

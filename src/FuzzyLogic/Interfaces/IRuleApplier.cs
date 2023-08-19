@@ -2,8 +2,8 @@
 {
     public interface IRuleApplier
     {
-        IRuleApplier And(Consequent consequent);
-        IRuleApplier Else(Consequent consequent);
-        IRuleBuilder ElseIf(FuzzyCondition fuzzyCondition);
+        IRuleApplier And(IConsequent consequent);
+        IRuleApplier Else(IConsequent consequent);
+        IRuleBuilder ElseIf(ICondition fuzzyCondition);
     }
 }

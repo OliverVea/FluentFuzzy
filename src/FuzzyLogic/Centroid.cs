@@ -1,6 +1,6 @@
 ﻿namespace FuzzyLogic
 {
-    public class Centroid
+    internal class Centroid
     {
         internal Centroid(double value, double weight)
         {

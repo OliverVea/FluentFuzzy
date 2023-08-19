@@ -2,7 +2,7 @@
 
 namespace FuzzyLogic.Test;
 
-public partial class FuzzyRulesTests
+public partial class FuzzyRuleTests
 {
     private const double Epsilon = 0.01;
 

@@ -2,50 +2,50 @@
 
 namespace FuzzyLogic
 {
-    public class FuzzyRuleBuilder : IRuleApplier, IRuleBuilder
+    internal class FuzzyRuleBuilder : IRuleApplier, IRuleBuilder
     {
-        private readonly FuzzyCondition _fuzzyCondition;
+        private readonly ICondition _condition;
 
-        internal FuzzyRuleBuilder(FuzzyCondition fuzzyCondition)
+        internal FuzzyRuleBuilder(ICondition condition)
         {
-            _fuzzyCondition = fuzzyCondition;
+            _condition = condition;
         }
     
-        public IRuleApplier Then(Consequent consequent)
+        public IRuleApplier Then(IConsequent consequent)
         {
-            consequent.Add(_fuzzyCondition);
+            consequent.Add(_condition);
             return this;
         }
     
-        public IRuleApplier And(Consequent consequent)
+        public IRuleApplier And(IConsequent consequent)
         {
-            consequent.Add(_fuzzyCondition);
+            consequent.Add(_condition);
             return this;
         }
 
-        public IRuleApplier Else(Consequent consequent)
+        public IRuleApplier Else(IConsequent consequent)
         {
-            var invertedFuzzyCondition = FuzzyCondition.Not(_fuzzyCondition);
+            var invertedFuzzyCondition = Condition.Not(_condition);
             consequent.Add(invertedFuzzyCondition);
             return new FuzzyRuleBuilder(invertedFuzzyCondition);
         }
 
-        public IRuleBuilder ElseIf(FuzzyCondition fuzzyCondition)
+        public IRuleBuilder ElseIf(ICondition condition)
         {
-            var invertedCondition = FuzzyCondition.Not(_fuzzyCondition);
-            var combinedCondition = FuzzyCondition.And(invertedCondition, fuzzyCondition);
+            var invertedCondition = Condition.Not(_condition);
+            var combinedCondition = Condition.And(invertedCondition, condition);
             return new FuzzyRuleBuilder(combinedCondition);
         }
 
-        public IRuleBuilder And(FuzzyCondition fuzzyCondition)
+        public IRuleBuilder And(ICondition condition)
         {
-            var combinedCondition = FuzzyCondition.And(_fuzzyCondition, fuzzyCondition);
+            var combinedCondition = Condition.And(_condition, condition);
             return new FuzzyRuleBuilder(combinedCondition);
         }
 
-        public IRuleBuilder Or(FuzzyCondition fuzzyCondition)
+        public IRuleBuilder Or(ICondition condition)
         {
-            var combinedCondition = FuzzyCondition.Or(_fuzzyCondition, fuzzyCondition);
+            var combinedCondition = Condition.Or(_condition, condition);
             return new FuzzyRuleBuilder(combinedCondition);
         }
     }

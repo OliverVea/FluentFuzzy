@@ -25,18 +25,18 @@ namespace FuzzyLogic
             _memberFunctions.Add(antecedent, memberFunction);
         }
 
-        public FuzzyCondition Is(int antecedent)
+        public ICondition Is(int antecedent)
         {
             if (_memberFunctions.TryGetValue(antecedent, out var memberFunction))
-                return new FuzzyCondition(memberFunction, _valueFunction);
+                return new Condition(memberFunction, _valueFunction);
         
             throw new ArgumentException($"Member function of {antecedent} is not implemented.", nameof(antecedent));
         }
 
-        public FuzzyCondition IsNot(int antecedent)
+        public ICondition IsNot(int antecedent)
         {
             if (_memberFunctions.TryGetValue(antecedent, out var memberFunction))
-                return FuzzyCondition.Not(new FuzzyCondition(memberFunction, _valueFunction));
+                return Condition.Not(new Condition(memberFunction, _valueFunction));
         
             throw new ArgumentException($"Member function of {antecedent} is not implemented.", nameof(antecedent));
         }

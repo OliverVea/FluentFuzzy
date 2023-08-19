@@ -4,7 +4,7 @@ namespace FuzzyLogic
 {
     internal static class CentroidExtensions
     {
-        public static Centroid Sum(this IEnumerable<Centroid> centroids)
+        internal static Centroid Sum(this IEnumerable<Centroid> centroids)
         {
             var weight = 0d;
             var value = 0d;

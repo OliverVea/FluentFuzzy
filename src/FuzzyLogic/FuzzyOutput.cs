@@ -9,7 +9,7 @@ namespace FuzzyLogic
     {
         private readonly Dictionary<int, Consequent> _fuzzyActions = new Dictionary<int, Consequent>();
         
-        public Consequent Is(int consequent)
+        public IConsequent Is(int consequent)
         {
             return _fuzzyActions[consequent];
         }
