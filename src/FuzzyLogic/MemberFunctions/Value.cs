@@ -13,8 +13,8 @@ namespace FuzzyLogic.MemberFunctions
             _value = value;
             _tolerance = tolerance;
         }
-        
-        double IMemberFunction.Evaluate(double x)
+
+        public double Evaluate(double x)
         {
             return Math.Abs(x - _value) < _tolerance ? 1 : 0;
         }

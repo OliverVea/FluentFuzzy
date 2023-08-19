@@ -17,7 +17,7 @@ namespace FuzzyLogic.MemberFunctions
             _max = max;
         }
 
-        double IMemberFunction.Evaluate(double x)
+        public double Evaluate(double x)
         {
             if (!double.IsFinite(x)) return double.NaN;
 
