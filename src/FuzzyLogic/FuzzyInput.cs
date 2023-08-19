@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using FuzzyLogic.MemberFunctions;
+using FuzzyLogic.Interfaces;
 
 namespace FuzzyLogic
 {

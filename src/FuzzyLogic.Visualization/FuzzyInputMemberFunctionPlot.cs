@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using FuzzyLogic.Interfaces;
 using FuzzyLogic.MemberFunctions;
 using ScottPlot;
 

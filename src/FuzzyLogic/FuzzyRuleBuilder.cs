@@ -1,6 +1,8 @@
-﻿namespace FuzzyLogic
+﻿using FuzzyLogic.Interfaces;
+
+namespace FuzzyLogic
 {
-    public class FuzzyRuleBuilder : IRuleApplier
+    public class FuzzyRuleBuilder : IRuleApplier, IRuleBuilder
     {
         private readonly FuzzyCondition _fuzzyCondition;
 
@@ -28,13 +30,20 @@
             return new FuzzyRuleBuilder(invertedFuzzyCondition);
         }
 
-        public FuzzyRuleBuilder And(FuzzyCondition fuzzyCondition)
+        public IRuleBuilder ElseIf(FuzzyCondition fuzzyCondition)
+        {
+            var invertedCondition = FuzzyCondition.Not(_fuzzyCondition);
+            var combinedCondition = FuzzyCondition.And(invertedCondition, fuzzyCondition);
+            return new FuzzyRuleBuilder(combinedCondition);
+        }
+
+        public IRuleBuilder And(FuzzyCondition fuzzyCondition)
         {
             var combinedCondition = FuzzyCondition.And(_fuzzyCondition, fuzzyCondition);
             return new FuzzyRuleBuilder(combinedCondition);
         }
 
-        public FuzzyRuleBuilder Or(FuzzyCondition fuzzyCondition)
+        public IRuleBuilder Or(FuzzyCondition fuzzyCondition)
         {
             var combinedCondition = FuzzyCondition.Or(_fuzzyCondition, fuzzyCondition);
             return new FuzzyRuleBuilder(combinedCondition);

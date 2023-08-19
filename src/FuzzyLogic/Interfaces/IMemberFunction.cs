@@ -1,4 +1,4 @@
-﻿namespace FuzzyLogic.MemberFunctions
+﻿namespace FuzzyLogic.Interfaces
 {
     public interface IMemberFunction
     {

@@ -1,4 +1,5 @@
 ﻿using System;
+using FuzzyLogic.Interfaces;
 
 namespace FuzzyLogic.MemberFunctions
 {
