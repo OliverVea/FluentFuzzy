@@ -7,6 +7,7 @@ namespace FuzzyLogic
     public class FuzzyInput
     {
         private readonly Func<double> _valueFunction;
+        public double Value => _valueFunction();
         
         private readonly Dictionary<int, IMemberFunction> _memberFunctions = new Dictionary<int, IMemberFunction>();
         public IReadOnlyDictionary<int, IMemberFunction> MemberFunctions => _memberFunctions;
@@ -15,7 +16,6 @@ namespace FuzzyLogic
         {
             _valueFunction = valueFunction;
         }
-
 
         public void Set(int antecedent, IMemberFunction memberFunction)
         {
