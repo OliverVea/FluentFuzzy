@@ -8,6 +8,7 @@
 
         <IsPackable>false</IsPackable>
         <IsTestProject>true</IsTestProject>
+        <RootNamespace>FuzzyLogic.Test</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
@@ -19,9 +20,9 @@
         <PackageReference Include="ScottPlot" Version="4.1.67" />
         <PackageReference Include="ScottPlot.WinForms" Version="4.1.67" />
     </ItemGroup>
-
+    
     <ItemGroup>
-      <ProjectReference Include="..\..\src\FuzzyLogic.Visualization\FuzzyLogic.Visualization.csproj" />
+        <ProjectReference Include="..\..\src\FluentFuzzy\FluentFuzzy.csproj" />
     </ItemGroup>
 
 </Project>

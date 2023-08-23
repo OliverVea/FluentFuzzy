@@ -6,10 +6,12 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <Version>0.1.0</Version>
+        <RootNamespace>FuzzyLogic.Visualization</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\FuzzyLogic\FuzzyLogic.csproj" />
+      <ProjectReference Include="..\FluentFuzzy\FluentFuzzy.csproj" />
     </ItemGroup>
 
     <ItemGroup>

@@ -4,6 +4,8 @@
         <TargetFramework>netstandard2.1</TargetFramework>
         <Nullable>enable</Nullable>
         <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <VersionPrefix>0.1.0</VersionPrefix>
+        <RootNamespace>FuzzyLogic</RootNamespace>
     </PropertyGroup>
 
 </Project>
