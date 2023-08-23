@@ -6,3 +6,6 @@
 
 **/*.user
 
+build
+
+**/*.pyc

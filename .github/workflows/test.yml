@@ -1,0 +1,10 @@
+name: Test
+on: 
+    pull_request: { branches: [ develop, master ] }
+jobs:
+    Test:
+        runs-on: ubuntu-latest
+        steps:
+            - run: python -m pip install -r scripts/equirements.txt
+            - run: python scripts/test.py
+            - run: echo "Done!"
