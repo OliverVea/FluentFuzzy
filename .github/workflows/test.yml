@@ -5,6 +5,6 @@ jobs:
     Test:
         runs-on: ubuntu-latest
         steps:
-            - run: python -m pip install -r scripts/equirements.txt
+            - run: python -m pip install -r scripts/requirements.txt
             - run: python scripts/test.py
             - run: echo "Done!"
