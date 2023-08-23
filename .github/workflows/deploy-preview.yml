@@ -1,0 +1,10 @@
+name: Deploy preview
+on:
+    push: { branches: [ develop ] }
+jobs:
+    Deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - run: python -m pip install -r scripts/requirements.txt
+            - run: python scripts/deploy.py --project src/FluentFuzzy/FluentFuzzy.csproj --config Debug --nuget-api-key ${{ secrets.NUGET_API_KEY }}
+            
