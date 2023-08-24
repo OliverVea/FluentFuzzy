@@ -1,4 +1,4 @@
-name: Deploy preview
+name: Deploy release
 on: workflow_dispatch
 jobs:
     Deploy:
