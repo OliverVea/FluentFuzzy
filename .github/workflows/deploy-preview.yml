@@ -7,5 +7,5 @@ jobs:
         steps:
             - uses: actions/checkout@v2
             - run: python -m pip install -r ./scripts/requirements.txt
-            - run: python ./scripts/deploy.py --project src/FluentFuzzy/FluentFuzzy.csproj --config Debug --nuget-api-key ${{ secrets.NUGET_API_KEY }}
+            - run: python ./scripts/deploy.py --project FluentFuzzy --config Debug --nuget-api-key ${{ secrets.NUGET_API_KEY }}
             
