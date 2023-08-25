@@ -15,9 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "repository", "repository", 
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "examples", "examples", "{E4C684B0-CEF0-4758-A766-6D82CE275917}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Visualizer", "Visualizer\Visualizer.csproj", "{2F0B1E82-0C69-4998-BB41-DA8981E40BD4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentFuzzy.Visualizer", "FluentFuzzy.Visualizer\FluentFuzzy.Visualizer.csproj", "{2F0B1E82-0C69-4998-BB41-DA8981E40BD4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +39,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{E322C064-0826-4640-8B1E-281E0C7FC211} = {16D1C450-9355-4937-A4D7-54D33587DBFE}
 		{90AD20D0-CEFE-486B-9F25-4F3154799B2F} = {0DEED023-7111-48C0-B8E6-906A9E7EFD08}
-		{2F0B1E82-0C69-4998-BB41-DA8981E40BD4} = {E4C684B0-CEF0-4758-A766-6D82CE275917}
+		{2F0B1E82-0C69-4998-BB41-DA8981E40BD4} = {16D1C450-9355-4937-A4D7-54D33587DBFE}
 	EndGlobalSection
 EndGlobal

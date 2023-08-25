@@ -1,6 +1,6 @@
-using Visualizer.Collections;
+using FluentFuzzy.Visualizer.Collections;
 
-namespace Visualizer.UserControls;
+namespace FluentFuzzy.Visualizer.UserControls;
 
 internal class RuleOverview : BaseListView
 {

@@ -1,4 +1,4 @@
-namespace Visualizer.UserControls;
+namespace FluentFuzzy.Visualizer.UserControls;
 
 public class CreateCancelButtons : UserControl
 {

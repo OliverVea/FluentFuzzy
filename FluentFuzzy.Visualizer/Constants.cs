@@ -1,4 +1,4 @@
-namespace Visualizer;
+namespace FluentFuzzy.Visualizer;
 
 public static class Constants
 {

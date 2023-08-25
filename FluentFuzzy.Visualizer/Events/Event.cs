@@ -1,4 +1,4 @@
-namespace Visualizer.Events;
+namespace FluentFuzzy.Visualizer.Events;
 
 public class Event<T> where T : EventArgs
 {

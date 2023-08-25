@@ -1,8 +1,8 @@
+using FluentFuzzy.Visualizer.Events;
 using FuzzyLogic.Interfaces;
 using FuzzyLogic.MemberFunctions;
-using Visualizer.Events;
 
-namespace Visualizer.Collections;
+namespace FluentFuzzy.Visualizer.Collections;
 
 public class FuzzyInput
 {

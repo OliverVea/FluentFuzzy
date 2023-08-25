@@ -1,6 +1,6 @@
-using Visualizer.Events;
+using FluentFuzzy.Visualizer.Events;
 
-namespace Visualizer.Collections;
+namespace FluentFuzzy.Visualizer.Collections;
 
 public static class FuzzyInputCollection
 {

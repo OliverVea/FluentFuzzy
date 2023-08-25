@@ -1,6 +1,6 @@
-using Visualizer.Forms;
+using FluentFuzzy.Visualizer.Forms;
 
-namespace Visualizer;
+namespace FluentFuzzy.Visualizer;
 
 internal static class Program
 {

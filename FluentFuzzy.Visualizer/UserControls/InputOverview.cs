@@ -1,7 +1,7 @@
-using Visualizer.Collections;
-using Visualizer.Forms;
+using FluentFuzzy.Visualizer.Collections;
+using FluentFuzzy.Visualizer.Forms;
 
-namespace Visualizer.UserControls;
+namespace FluentFuzzy.Visualizer.UserControls;
 
 internal class InputOverview : BaseListView
 {

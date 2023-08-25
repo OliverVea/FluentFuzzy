@@ -1,4 +1,4 @@
-namespace Visualizer.UserControls;
+namespace FluentFuzzy.Visualizer.UserControls;
 
 internal class InputOutputContainer : UserControl
 {

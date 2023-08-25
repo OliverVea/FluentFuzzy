@@ -1,6 +1,6 @@
 using System.ComponentModel;
 
-namespace Visualizer.Events;
+namespace FluentFuzzy.Visualizer.Events;
 
 public static class EventList
 {

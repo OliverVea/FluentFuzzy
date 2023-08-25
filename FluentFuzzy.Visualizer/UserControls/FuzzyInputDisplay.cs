@@ -1,8 +1,8 @@
+using FluentFuzzy.Visualizer.Collections;
 using ScottPlot;
-using Visualizer.Collections;
 using Cursor = System.Windows.Forms.Cursor;
 
-namespace Visualizer.UserControls;
+namespace FluentFuzzy.Visualizer.UserControls;
 
 public class FuzzyInputDisplay : UserControl
 {

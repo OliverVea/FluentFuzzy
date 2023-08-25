@@ -1,6 +1,6 @@
 using FuzzyLogic.Interfaces;
 
-namespace Visualizer.Collections;
+namespace FluentFuzzy.Visualizer.Collections;
 
 public class MemberFunction
 {

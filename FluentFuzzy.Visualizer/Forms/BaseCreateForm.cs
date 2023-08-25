@@ -1,6 +1,6 @@
-using Visualizer.UserControls;
+using FluentFuzzy.Visualizer.UserControls;
 
-namespace Visualizer.Forms;
+namespace FluentFuzzy.Visualizer.Forms;
 
 public class BaseCreateForm<T> : Form where T : UserControl, ICreateOptions, new()
 {
