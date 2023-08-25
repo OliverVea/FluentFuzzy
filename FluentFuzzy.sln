@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "repository", "repository", 
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentFuzzy.Visualizer", "FluentFuzzy.Visualizer\FluentFuzzy.Visualizer.csproj", "{2F0B1E82-0C69-4998-BB41-DA8981E40BD4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentFuzzy.Visualizer", "src\FluentFuzzy.Visualizer\FluentFuzzy.Visualizer.csproj", "{2F0B1E82-0C69-4998-BB41-DA8981E40BD4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

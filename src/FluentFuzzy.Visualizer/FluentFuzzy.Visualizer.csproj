@@ -10,7 +10,7 @@
     </PropertyGroup>
     
     <ItemGroup>
-        <ProjectReference Include="../src/FluentFuzzy/FluentFuzzy.csproj" />
+        <ProjectReference Include="../FluentFuzzy/FluentFuzzy.csproj" />
     </ItemGroup>
     
     <ItemGroup>
