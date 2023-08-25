@@ -4,10 +4,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentFuzzy", "src\FluentFu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentFuzzy.Test", "test\FluentFuzzy.Test\FluentFuzzy.Test.csproj", "{90AD20D0-CEFE-486B-9F25-4F3154799B2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentFuzzy.Visualization", "src\FluentFuzzy.Visualization\FluentFuzzy.Visualization.csproj", "{CFAF3451-4EC3-4328-A116-F9C2EA5EE884}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentFuzzy.Visualization.Test", "test\FluentFuzzy.Visualization.Test\FluentFuzzy.Visualization.Test.csproj", "{DBD90567-C27D-493A-8426-0988E99A9B2A}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{16D1C450-9355-4937-A4D7-54D33587DBFE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{0DEED023-7111-48C0-B8E6-906A9E7EFD08}"
@@ -18,6 +14,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "repository", "repository", 
 		LICENSE = LICENSE
 		.gitignore = .gitignore
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "examples", "examples", "{E4C684B0-CEF0-4758-A766-6D82CE275917}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Visualizer", "Visualizer\Visualizer.csproj", "{2F0B1E82-0C69-4998-BB41-DA8981E40BD4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,19 +33,14 @@ Global
 		{90AD20D0-CEFE-486B-9F25-4F3154799B2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90AD20D0-CEFE-486B-9F25-4F3154799B2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90AD20D0-CEFE-486B-9F25-4F3154799B2F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CFAF3451-4EC3-4328-A116-F9C2EA5EE884}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CFAF3451-4EC3-4328-A116-F9C2EA5EE884}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CFAF3451-4EC3-4328-A116-F9C2EA5EE884}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CFAF3451-4EC3-4328-A116-F9C2EA5EE884}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DBD90567-C27D-493A-8426-0988E99A9B2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DBD90567-C27D-493A-8426-0988E99A9B2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DBD90567-C27D-493A-8426-0988E99A9B2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DBD90567-C27D-493A-8426-0988E99A9B2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F0B1E82-0C69-4998-BB41-DA8981E40BD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F0B1E82-0C69-4998-BB41-DA8981E40BD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F0B1E82-0C69-4998-BB41-DA8981E40BD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F0B1E82-0C69-4998-BB41-DA8981E40BD4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E322C064-0826-4640-8B1E-281E0C7FC211} = {16D1C450-9355-4937-A4D7-54D33587DBFE}
-		{CFAF3451-4EC3-4328-A116-F9C2EA5EE884} = {16D1C450-9355-4937-A4D7-54D33587DBFE}
 		{90AD20D0-CEFE-486B-9F25-4F3154799B2F} = {0DEED023-7111-48C0-B8E6-906A9E7EFD08}
-		{DBD90567-C27D-493A-8426-0988E99A9B2A} = {0DEED023-7111-48C0-B8E6-906A9E7EFD08}
+		{2F0B1E82-0C69-4998-BB41-DA8981E40BD4} = {E4C684B0-CEF0-4758-A766-6D82CE275917}
 	EndGlobalSection
 EndGlobal
