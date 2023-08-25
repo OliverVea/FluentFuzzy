@@ -11,9 +11,10 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
-            - uses: tokusumi/markdown-embed-code@v1.0.0
-              with: 
-                token: ${{ secrets.GITHUB_TOKEN }}
+            - uses: urmzd/embed-md@v1.0.0
+              with:
+                markdown-files: "README.md"
+                commit-message: "chore: embed example using self"
 
     run-tests:
         name: Run Tests
