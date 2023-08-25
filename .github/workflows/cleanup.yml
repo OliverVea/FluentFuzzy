@@ -1,0 +1,11 @@
+name: Cleanup Dev
+
+on: push
+
+jobs:   
+    embed-code:
+        name: Embed code snippets in readme
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - uses: OliverVea/embed-md@main
