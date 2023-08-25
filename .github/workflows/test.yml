@@ -1,6 +1,10 @@
-name: Test
-on: 
-    pull_request: { branches: [ main ] }
+name: PR to Main
+
+on:
+  pull_request:
+    branches:
+      - main
+
 jobs:
     Test:
         runs-on: windows-latest
@@ -9,3 +13,12 @@ jobs:
             - run: python -m pip install -r ./scripts/requirements.txt
             - run: python ./scripts/test.py
             - run: echo "Done!"
+
+            
+    embed-code:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - uses: tokusumi/markdown-embed-code@main
+              with: 
+                token: ${{ secrets.GITHUB_TOKEN }}
