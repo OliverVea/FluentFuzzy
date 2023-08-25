@@ -38,8 +38,7 @@ internal class InputOverview : BaseListView
 
     protected override void OnAddButton()
     {
-        var dialog = new BaseCreateForm<CreatInputOptions>();
-        dialog.Show();
+        new BaseCreateForm<CreatInputOptions>().Show();
     }
 
     protected override bool IsButtonActive()

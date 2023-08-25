@@ -29,7 +29,7 @@ public class BaseCreateForm<T> : Form where T : UserControl, ICreateOptions, new
         Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom
     };
 
-    private readonly T _options = new()
+    protected readonly T Options = new()
     {
         Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top
     };
@@ -49,7 +49,7 @@ public class BaseCreateForm<T> : Form where T : UserControl, ICreateOptions, new
         _layout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
         _layout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
         _layout.Controls.Add(_title);
-        _layout.Controls.Add(_options);
+        _layout.Controls.Add(Options);
         _layout.Controls.Add(_buttons);
         
         Controls.Add(_layout);
@@ -61,9 +61,9 @@ public class BaseCreateForm<T> : Form where T : UserControl, ICreateOptions, new
         Close();
     }
     
-    private void Create(object? sender, EventArgs e)
+    protected virtual void Create(object? sender, EventArgs e)
     {
-        _options.Create();
+        Options.Create();
         _buttons.CreateButton.Click -= Cancel;
         Close();
     }
