@@ -18,9 +18,8 @@ After importing the Nuget package, using FuzzyLogic is a 2-step process.
 
 `FuzzyInput`s and `FuzzyOutput`s can be set up in the following manner:
 
-```csharp:test/FluentFuzzy.Test/Example.cs#L10-L12
-var health = new FuzzyInput(() => GetHealth());
-var flee = new FuzzyOutput();
+```cs
+// test/FluentFuzzy.Test/Example.cs#L10-L12
 ```
 
 `FuzzyInput` requires a `Func<double>` to get the current crisp value of the input.
@@ -29,7 +28,7 @@ var flee = new FuzzyOutput();
 
 The next step is adding member functions to each input:
 
-```csharp
+```cs
 // test/FluentFuzzy.Test/Example.cs#L14-L20
 ```
 
@@ -45,7 +44,7 @@ Custom membership functions can be created by implementing the `IMembershipFunct
 
 After the input functions, membership functions can be added to the `FuzzyOutput`
 
-```csharp
+```cs
 // test/FluentFuzzy.Test/Example.cs#L22-L24
 ```
 
@@ -59,7 +58,7 @@ After setting up the fuzzy inputs and outputs, rules can be created to connect t
 
 Rules are created with a readable fluent syntax:
 
-```csharp
+```cs
 // test/FluentFuzzy.Test/Example.cs#L26-L28
 ```
 
@@ -67,6 +66,6 @@ Rules are created with a readable fluent syntax:
 
 After creating the fuzzy ruleset, the output can be evaluated by calling the `Evaluate` method on the output:
 
-```csharp
+```cs
 // test/FluentFuzzy.Test/Example.cs#L30-L30
 ```
