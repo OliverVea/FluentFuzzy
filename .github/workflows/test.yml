@@ -11,7 +11,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
-            - uses: urmzd/embed-md@v1.0.0
+            - uses: urmzd/embed-md@v1.0.2
               with:
                 markdown-files: "README.md"
                 commit-message: "chore: embed example using self"
