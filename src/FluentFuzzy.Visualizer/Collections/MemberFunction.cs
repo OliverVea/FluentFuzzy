@@ -1,4 +1,4 @@
-using FuzzyLogic.Interfaces;
+using FluentFuzzy.Interfaces;
 
 namespace FluentFuzzy.Visualizer.Collections;
 

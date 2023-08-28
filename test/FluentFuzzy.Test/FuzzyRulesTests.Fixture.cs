@@ -1,4 +1,5 @@
-﻿using FuzzyLogic.MemberFunctions;
+﻿using FluentFuzzy;
+using FluentFuzzy.MemberFunctions;
 
 namespace FuzzyLogic.Test;
 

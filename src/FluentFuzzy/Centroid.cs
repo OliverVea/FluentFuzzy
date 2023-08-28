@@ -1,4 +1,4 @@
-﻿namespace FuzzyLogic
+﻿namespace FluentFuzzy
 {
     public class Centroid
     {
@@ -11,6 +11,6 @@
         public double Value { get; }
         public double Weight { get; }
 
-        public static readonly Centroid Zero = new Centroid(0, 0);
+        public static readonly Centroid Zero = new(0, 0);
     }
 }

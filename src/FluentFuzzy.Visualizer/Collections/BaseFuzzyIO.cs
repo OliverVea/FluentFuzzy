@@ -1,5 +1,5 @@
+using FluentFuzzy.Interfaces;
 using FluentFuzzy.Visualizer.Events;
-using FuzzyLogic.Interfaces;
 
 namespace FluentFuzzy.Visualizer.Collections;
 

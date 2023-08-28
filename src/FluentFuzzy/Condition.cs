@@ -1,7 +1,7 @@
 ﻿using System;
-using FuzzyLogic.Interfaces;
+using FluentFuzzy.Interfaces;
 
-namespace FuzzyLogic
+namespace FluentFuzzy
 {
     internal class Condition : ICondition
     {

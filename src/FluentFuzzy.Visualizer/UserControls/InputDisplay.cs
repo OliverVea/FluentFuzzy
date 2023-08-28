@@ -1,5 +1,4 @@
 using System.ComponentModel;
-using FluentFuzzy.Visualizer.Collections;
 using FluentFuzzy.Visualizer.Forms;
 using ScottPlot;
 using Cursor = System.Windows.Forms.Cursor;
@@ -42,9 +41,9 @@ public class InputDisplay : UserControl
         Dock = DockStyle.Fill
     };
 
-    private readonly FuzzyInput _input;
+    private readonly Collections.FuzzyInput _input;
     
-    public InputDisplay(FuzzyInput input)
+    public InputDisplay(Collections.FuzzyInput input)
     {
         _input = input;
         

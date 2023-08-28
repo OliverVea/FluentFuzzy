@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using FuzzyLogic.Interfaces;
+using FluentFuzzy.Interfaces;
 
-namespace FuzzyLogic
+namespace FluentFuzzy
 {
     internal class Consequent : IConsequent
     {

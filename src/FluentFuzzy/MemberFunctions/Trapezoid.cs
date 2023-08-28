@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using FuzzyLogic.Interfaces;
+using FluentFuzzy.Interfaces;
 
-namespace FuzzyLogic.MemberFunctions
+namespace FluentFuzzy.MemberFunctions
 {
     public class Trapezoid : IMemberFunction, IHasCentroid
     {

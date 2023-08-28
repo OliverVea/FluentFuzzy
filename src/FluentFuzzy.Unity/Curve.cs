@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq;
-using FuzzyLogic.Interfaces;
+using FluentFuzzy.Interfaces;
 using UnityEngine;
 
-namespace FuzzyLogic.Unity
+namespace FluentFuzzy.Unity
 {
     [Serializable]
     public class Curve : IMemberFunction, IHasCentroid

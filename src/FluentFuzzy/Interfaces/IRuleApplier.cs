@@ -1,4 +1,4 @@
-﻿namespace FuzzyLogic.Interfaces
+﻿namespace FluentFuzzy.Interfaces
 {
     public interface IRuleApplier
     {

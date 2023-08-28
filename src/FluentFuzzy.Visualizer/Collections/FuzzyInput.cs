@@ -4,13 +4,13 @@ namespace FluentFuzzy.Visualizer.Collections;
 
 public class FuzzyInput : BaseFuzzyIO
 {
-    private readonly FuzzyLogic.FuzzyInput _input;
+    private readonly FluentFuzzy.FuzzyInput _input;
     
     public readonly Event<FuzzyInputValueChangedArgs> FuzzyInputValueChanged = new();
     
     public FuzzyInput(string name) : base(name)
     {
-        _input = new FuzzyLogic.FuzzyInput(() => Value);
+        _input = new FluentFuzzy.FuzzyInput(() => Value);
     }
     
 

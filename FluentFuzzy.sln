@@ -11,25 +11,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{16D1C450-935
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{0DEED023-7111-48C0-B8E6-906A9E7EFD08}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "repository", "repository", "{CE543CA3-14BE-43BB-AA31-E80D4C55EA95}"
-	ProjectSection(SolutionItems) = preProject
-		README.md = README.md
-		LICENSE = LICENSE
-		.gitignore = .gitignore
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentFuzzy.Unity", "src\FluentFuzzy.Unity\FluentFuzzy.Unity.csproj", "{42803B31-2D18-4793-83CD-18EF17E18730}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentFuzzy.Unity.Editor", "src\FluentFuzzy.Unity.Editor\FluentFuzzy.Unity.Editor.csproj", "{D9FA3BEE-8F89-428E-8EA6-A9881B8351DA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentFuzzy.Visualizer", "src\FluentFuzzy.Visualizer\FluentFuzzy.Visualizer.csproj", "{2F0B1E82-0C69-4998-BB41-DA8981E40BD4}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{8EFA58CD-A374-4FC6-9EFA-BF909E5B7C76}"
-	ProjectSection(SolutionItems) = preProject
-		.github\workflows\merge.yml = .github\workflows\merge.yml
-		.github\workflows\release.yml = .github\workflows\release.yml
-		.github\workflows\test.yml = .github\workflows\test.yml
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,6 +59,5 @@ Global
 		{42803B31-2D18-4793-83CD-18EF17E18730} = {16D1C450-9355-4937-A4D7-54D33587DBFE}
 		{D9FA3BEE-8F89-428E-8EA6-A9881B8351DA} = {16D1C450-9355-4937-A4D7-54D33587DBFE}
 		{2F0B1E82-0C69-4998-BB41-DA8981E40BD4} = {16D1C450-9355-4937-A4D7-54D33587DBFE}
-		{8EFA58CD-A374-4FC6-9EFA-BF909E5B7C76} = {CE543CA3-14BE-43BB-AA31-E80D4C55EA95}
 	EndGlobalSection
 EndGlobal

@@ -2,11 +2,11 @@ namespace FluentFuzzy.Visualizer.Collections;
 
 public class FuzzyOutput : BaseFuzzyIO
 {
-    private readonly FuzzyLogic.FuzzyOutput _output;
+    private readonly FluentFuzzy.FuzzyOutput _output;
     
     public FuzzyOutput(string name) : base(name)
     {
-        _output = new FuzzyLogic.FuzzyOutput();
+        _output = new FluentFuzzy.FuzzyOutput();
     }
 
     protected override void AddMemberFunction(MemberFunction wrapper)

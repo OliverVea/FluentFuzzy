@@ -1,4 +1,3 @@
-using FluentFuzzy.Visualizer.Collections;
 using FluentFuzzy.Visualizer.Forms;
 using ScottPlot;
 using Cursor = System.Windows.Forms.Cursor;
@@ -35,9 +34,9 @@ public class OutputDisplay : UserControl
         Dock = DockStyle.Fill
     };
 
-    private readonly FuzzyOutput _output;
+    private readonly Collections.FuzzyOutput _output;
     
-    public OutputDisplay(FuzzyOutput output)
+    public OutputDisplay(Collections.FuzzyOutput output)
     {
         _output = output;
         
@@ -52,7 +51,7 @@ public class OutputDisplay : UserControl
         _plot.Plot.YLabel("Membership");
         _plot.Refresh();
         
-        var items = _functionOptions.Keys.Select(x => new ToolStripMenuItem(x)).ToArray();
+        var items = _functionOptions.Keys.Select(x => new ToolStripMenuItem(x)).OfType<ToolStripItem>().ToArray();
         _addFunction.DropDownItems.AddRange(items);
         _contextMenu.Items.Add(_addFunction);
         _contextMenu.Items.Add(_removeFunction);
@@ -115,7 +114,7 @@ public class OutputDisplay : UserControl
     {
         _removeFunction.DropDownItems.Clear();
         
-        var items = _output.MemberFunctions.Select(x => new ToolStripMenuItem(x.Name)).ToArray();
+        var items = _output.MemberFunctions.Select(x => new ToolStripMenuItem(x.Name)).OfType<ToolStripItem>().ToArray();
 
         _removeFunction.Enabled = items.Any();
         _removeFunction.DropDownItems.AddRange(items);

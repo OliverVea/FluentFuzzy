@@ -4,8 +4,8 @@ public abstract class BaseListView : UserControl
 {
     protected abstract void OnAddButton();
     protected abstract bool IsButtonActive();
-    
-    protected void SetButtonActive(bool active) => _addButton.Enabled = active;
+
+    private void SetButtonActive(bool active) => _addButton.Enabled = active;
     
     private readonly Label _title = new()
     {

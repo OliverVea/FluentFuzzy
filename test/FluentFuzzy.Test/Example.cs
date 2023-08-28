@@ -1,4 +1,5 @@
-using FuzzyLogic.MemberFunctions;
+using FluentFuzzy;
+using FluentFuzzy.MemberFunctions;
 
 namespace FuzzyLogic.Test;
 
@@ -6,14 +7,14 @@ public class Example
 {
     [Test]
     public void DocumentationExample()
-    {
-        var healthValue = 35;
+    { 
+        const int healthValue = 35;
         var health = new FuzzyInput(() => healthValue);
         var flee = new FuzzyOutput();
         
-        var low = 0;
-        var medium = 1;
-        var high = 2;
+        const int low = 0;
+        const int medium = 1;
+        const int high = 2;
 
         health.Set(low, new Trapezoid(0, 0, 25, 50));
         health.Set(medium, new Triangle(25, 50, 75));

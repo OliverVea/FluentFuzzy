@@ -1,6 +1,6 @@
-﻿using FuzzyLogic.Interfaces;
+﻿using FluentFuzzy.Interfaces;
 
-namespace FuzzyLogic
+namespace FluentFuzzy
 {
     public static class FuzzyRule
     {
