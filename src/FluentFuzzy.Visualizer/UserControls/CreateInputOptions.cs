@@ -20,7 +20,7 @@ public class CreateInputOptions : BaseCreateOption
     public override void Create()
     {
         var name = _nameTextBox.Text ?? "";
-        var fuzzyInput = new FuzzyInput(name)
+        var fuzzyInput = new Collections.FuzzyInput(name)
         {
             Min = (double)_minInput.Value,
             Max = (double)_maxInput.Value,

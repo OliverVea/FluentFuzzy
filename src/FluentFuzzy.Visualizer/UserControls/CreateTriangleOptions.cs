@@ -1,5 +1,5 @@
+using FluentFuzzy.MemberFunctions;
 using FluentFuzzy.Visualizer.Collections;
-using FuzzyLogic.MemberFunctions;
 
 namespace FluentFuzzy.Visualizer.UserControls;
 

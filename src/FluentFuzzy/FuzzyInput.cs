@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using FuzzyLogic.Interfaces;
+using FluentFuzzy.Interfaces;
 
-namespace FuzzyLogic
+namespace FluentFuzzy
 {
     public class FuzzyInput
     {

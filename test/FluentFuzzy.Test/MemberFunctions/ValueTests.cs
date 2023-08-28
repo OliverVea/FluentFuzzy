@@ -1,6 +1,6 @@
-﻿using FuzzyLogic.MemberFunctions;
+﻿using FluentFuzzy.MemberFunctions;
 
-namespace FuzzyLogic.Test.MemberFunctions;
+namespace FluentFuzzy.Test.MemberFunctions;
 
 public class ValueTests
 {

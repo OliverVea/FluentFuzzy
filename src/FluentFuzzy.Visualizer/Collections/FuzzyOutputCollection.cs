@@ -5,7 +5,6 @@ namespace FluentFuzzy.Visualizer.Collections;
 public class FuzzyOutputCollection
 {
     private static readonly List<FuzzyOutput> Outputs = new();
-    public static IReadOnlyList<FuzzyOutput> FuzzyOutputs => Outputs;
     
 
     public static readonly Event<OutputAddedArgs> OutputAdded = new();
@@ -19,7 +18,7 @@ public class FuzzyOutputCollection
     }
     
 
-    public static readonly Event<OutputRemovedArgs> OutputRemoved = new();
+    private static readonly Event<OutputRemovedArgs> OutputRemoved = new();
     public class OutputRemovedArgs : EventArgs
     {
         public FuzzyOutput RemovedOutput { get; private set; }

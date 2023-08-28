@@ -20,7 +20,7 @@ public class CreateOutputOptions : BaseCreateOption
     public override void Create()
     {
         var name = _nameTextBox.Text ?? "";
-        var fuzzyOutput = new FuzzyOutput(name)
+        var fuzzyOutput = new Collections.FuzzyOutput(name)
         {
             Min = (double)_minOutput.Value,
             Max = (double)_maxOutput.Value,

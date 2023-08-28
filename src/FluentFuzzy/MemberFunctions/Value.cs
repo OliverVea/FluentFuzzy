@@ -1,7 +1,7 @@
 ﻿using System;
-using FuzzyLogic.Interfaces;
+using FluentFuzzy.Interfaces;
 
-namespace FuzzyLogic.MemberFunctions
+namespace FluentFuzzy.MemberFunctions
 {
     public class Value : IMemberFunction
     {

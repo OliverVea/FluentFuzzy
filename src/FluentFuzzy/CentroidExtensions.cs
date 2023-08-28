@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace FuzzyLogic
+namespace FluentFuzzy
 {
     internal static class CentroidExtensions
     {

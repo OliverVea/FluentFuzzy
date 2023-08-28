@@ -1,18 +1,18 @@
-# FuzzyLogic
+# FluentFuzzy
 
-FuzzyLogic is a package for doing fuzzy logic in .NET with a natural fluent syntax.
+FluentFuzzy is a package for doing fuzzy logic in .NET with a natural fluent syntax.
 
-> FuzzyLogic is very much WIP and should be expected to be updated with breaking changes.
+> FluentFuzzy is very much WIP and should be expected to be updated with breaking changes.
 
 ## Contents
 
-`FuzzyLogic` contains the core fuzzy logic functionality.
+`FluentFuzzy` contains the core fuzzy logic functionality.
 
-`FuzzyLogic.Visualization` has visualization for some `FuzzyLogic` classes.
+`FluentFuzzy.Visualization` has visualization for some `FluentFuzzy` classes.
 
 ## Using
 
-After importing the Nuget package, using FuzzyLogic is a 2-step process.
+After importing the Nuget package, using FluentFuzzy is a 2-step process.
 
 ### Setting up input and output
 
@@ -21,7 +21,7 @@ After importing the Nuget package, using FuzzyLogic is a 2-step process.
 ```cs
 // test/FluentFuzzy.Test/Example.cs#L10-L12
 
-var healthValue = 35;
+const int healthValue = 35;
 var health = new FuzzyInput(() => healthValue);
 var flee = new FuzzyOutput();
 ```
@@ -35,9 +35,9 @@ The next step is adding member functions to each input:
 ```cs
 // test/FluentFuzzy.Test/Example.cs#L14-L20
 
-var low = 0;
-var medium = 1;
-var high = 2;
+const int low = 0;
+const int medium = 1;
+const int high = 2;
 
 health.Set(low, new Trapezoid(0, 0, 25, 50));
 health.Set(medium, new Triangle(25, 50, 75));

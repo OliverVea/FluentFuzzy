@@ -6,6 +6,7 @@ SOURCE_NAME = 'github'
 NAMESPACE = 'OliverVea'
 
 REPO_ROOT = pathlib.Path(__file__).parent.parent
+SLN_FILE = REPO_ROOT / 'FluentFuzzy.sln'
 BUILD_ROOT = REPO_ROOT / 'build'
 TEST_ROOT = REPO_ROOT / 'test'
 SRC_ROOT = REPO_ROOT / 'src'

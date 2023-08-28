@@ -8,4 +8,7 @@ for project in test_projects:
     dotnet_test = ['dotnet', 'test', str(project)]
 
     process = Popen(dotnet_test)
-    process.wait()
+    result = process.wait()
+
+    if result:
+        exit(result)

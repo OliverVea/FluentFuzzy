@@ -1,4 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup Label="General">
+        <VersionPrefix>0.1.0</VersionPrefix>
+        <Nullable>enable</Nullable>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <RepositoryUrl>https://github.com/OliverVea/FluentFuzzy.git</RepositoryUrl>
+    </PropertyGroup>
+    
+    <PropertyGroup Label="Project">
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <LangVersion>9</LangVersion>
+        <RootNamespace>FluentFuzzy.Unity.Editor</RootNamespace>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+    </PropertyGroup>
 
     <ItemGroup>
         <ProjectReference Include="../FluentFuzzy/FluentFuzzy.csproj" />

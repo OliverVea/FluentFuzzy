@@ -9,7 +9,7 @@ def _run(args, allow_failed: bool = False):
     result = process.wait()
 
     if allow_failed:
-        return
+        return 0
 
     if result != 0:
         exit(result)

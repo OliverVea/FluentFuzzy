@@ -20,20 +20,27 @@ config = 'Debug' if args.prerelease else 'Release'
 fluent_fuzzy_out = BUILD_ROOT / FLUENT_FUZZY.name / config.lower()
 version_suffix = f'p-{datetime.datetime.now().strftime("%Y-%m-%d-%H-%M-%S")}' if args.prerelease else None
 
-pack(
+if result := pack(
     project = FLUENT_FUZZY.csproj_path,
     out = fluent_fuzzy_out,
     configuration = config,
     include_symbols = args.prerelease,
     include_source = args.prerelease,
     version_suffix = version_suffix
-)
+):
+    shutil.rmtree(BUILD_ROOT)
+    exit(result)
 
-nuget_add_source(args.username, args.token)
+
+if result := nuget_add_source(args.username, args.token):
+    shutil.rmtree(BUILD_ROOT)
+    exit(result)
 
 nuget_path = fluent_fuzzy_out / '*.nupkg'
 
-nuget_push(nuget_path, args.token)
+result = nuget_push(nuget_path, args.token)
 
 if args.cleanup:
     shutil.rmtree(BUILD_ROOT)
+
+exit(result)
