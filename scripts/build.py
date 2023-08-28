@@ -1,10 +1,18 @@
 import subprocess
 
-from constants import SLN_FILE
+from constants import SRC_ROOT
 
-args = ['dotnet', 'build', SLN_FILE]
+projects = SRC_ROOT.glob('**/*.csproj')
 
-process = subprocess.Popen(args)
-result = process.wait()
+for project in projects:
 
-exit(result)
+    if 'unity' in str(project).lower():
+        continue
+
+    args = ['dotnet', 'build', project]
+
+    process = subprocess.Popen(args)
+    result = process.wait()
+
+    if result:
+        exit(result)

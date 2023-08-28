@@ -22,8 +22,8 @@ After importing the Nuget package, using FluentFuzzy is a 2-step process.
 // test/FluentFuzzy.Test/Example.cs#L10-L12
 
 const int healthValue = 35;
-const int health = new FuzzyInput(() => healthValue);
-const int flee = new FuzzyOutput();
+var health = new FuzzyInput(() => healthValue);
+var flee = new FuzzyOutput();
 ```
 
 `FuzzyInput` requires a `Func<double>` to get the current crisp value of the input.
@@ -35,9 +35,9 @@ The next step is adding member functions to each input:
 ```cs
 // test/FluentFuzzy.Test/Example.cs#L14-L20
 
-var low = 0;
-var medium = 1;
-var high = 2;
+const int low = 0;
+const int medium = 1;
+const int high = 2;
 
 health.Set(low, new Trapezoid(0, 0, 25, 50));
 health.Set(medium, new Triangle(25, 50, 75));
