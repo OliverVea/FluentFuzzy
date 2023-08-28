@@ -1,17 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
-    <PropertyGroup>
-        <TargetFramework>netstandard2.1</TargetFramework>
-        <Nullable>enable</Nullable>
-        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-        <VersionPrefix>0.1.0</VersionPrefix>
-        <RootNamespace>FuzzyLogic</RootNamespace>
+    <PropertyGroup Label="Project">
+        <RootNamespace>FluentFuzzy</RootNamespace>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-        
         <RepositoryUrl>https://github.com/OliverVea/FluentFuzzy.git</RepositoryUrl>
     </PropertyGroup>
-
 
     <ItemGroup>
         <None Include="../../README.md" Pack="true" PackagePath="\"/>

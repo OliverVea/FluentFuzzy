@@ -1,16 +1,15 @@
 ﻿using System;
 using System.Linq;
-using FuzzyLogic;
 using FuzzyLogic.Interfaces;
 using UnityEngine;
 
-namespace FluentFuzzy.Unity
+namespace FuzzyLogic.Unity
 {
     [Serializable]
     public class Curve : IMemberFunction, IHasCentroid
     {
         [SerializeField] [Min(0)] private int _centroidSamples = 100;
-        [SerializeField] private AnimationCurve _animationCurve;
+        [SerializeField] private AnimationCurve _animationCurve = new();
         
         public double Evaluate(double x)
         {

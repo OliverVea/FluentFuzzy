@@ -1,4 +1,5 @@
-﻿using UnityEditor;
+﻿using FuzzyLogic.Unity;
+using UnityEditor;
 using UnityEngine;
 
 namespace FluentFuzzy.Unity.Editor

@@ -1,10 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-    <PropertyGroup>
-        <TargetFramework>netstandard2.1</TargetFramework>
-        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-        <VersionPrefix>0.1.0</VersionPrefix>
-        <Nullable>enable</Nullable>
+    <PropertyGroup Label="Project">
+        <RootNamespace>FluentFuzzy.Unity</RootNamespace>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     </PropertyGroup>
 
     <ItemGroup>
@@ -16,7 +15,7 @@
         <Reference Include="System.Core"/>
         <Reference Include="System.Xml"/>
         <Reference Include="UnityEngine">
-            <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.5f1\Editor\Data\Managed\UnityEngine.dll</HintPath>
+            <HintPath>$(UNITY_PATH)\UnityEngine.dll</HintPath>
         </Reference>
     </ItemGroup>
 
