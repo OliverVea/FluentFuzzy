@@ -10,6 +10,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{16D1C450-935
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{0DEED023-7111-48C0-B8E6-906A9E7EFD08}"
+	ProjectSection(SolutionItems) = preProject
+		test\directory.build.props = test\directory.build.props
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentFuzzy.Unity", "src\FluentFuzzy.Unity\FluentFuzzy.Unity.csproj", "{42803B31-2D18-4793-83CD-18EF17E18730}"
 EndProject

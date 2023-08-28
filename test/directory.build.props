@@ -1,0 +1,10 @@
+﻿<Project>
+    <PropertyGroup Label="General">
+        <VersionPrefix>0.1.0</VersionPrefix>
+        <Nullable>enable</Nullable>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <RepositoryUrl>https://github.com/OliverVea/FluentFuzzy.git</RepositoryUrl>
+
+        <TargetFramework>net6.0</TargetFramework>
+    </PropertyGroup>
+</Project>
