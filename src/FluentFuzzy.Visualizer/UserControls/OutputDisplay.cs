@@ -39,11 +39,12 @@ public class OutputDisplay : UserControl
     
     public OutputDisplay(FuzzyOutput output)
     {
+        _output = output;
+        
         _functionOptions = new Dictionary<string, Action>
         {
             { "Triangle", () => new CreateTriangleForm(_output).Show() }
         };
-        _output = output;
         
         _plot.Configuration.Zoom = false;
         _plot.Configuration.Pan = false;

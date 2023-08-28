@@ -3,7 +3,7 @@ name: PR to Main
 on:
   pull_request:
     branches:
-      - $default-branch
+      - main
 
 jobs:   
     verify-example:

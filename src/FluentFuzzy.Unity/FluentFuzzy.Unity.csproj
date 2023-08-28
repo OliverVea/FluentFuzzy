@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup Label="Project">
+        <RootNamespace>FluentFuzzy.Unity</RootNamespace>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="../FluentFuzzy/FluentFuzzy.csproj" />
+    </ItemGroup>
+    
+    <ItemGroup>
+        <Reference Include="System"/>
+        <Reference Include="System.Core"/>
+        <Reference Include="System.Xml"/>
+        <Reference Include="UnityEngine">
+            <HintPath>$(UNITY_PATH)\UnityEngine.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+
+</Project>

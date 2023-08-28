@@ -46,11 +46,12 @@ public class InputDisplay : UserControl
     
     public InputDisplay(FuzzyInput input)
     {
+        _input = input;
+        
         _functionOptions = new Dictionary<string, Action>
         {
             { "Triangle", () => new CreateTriangleForm(_input).Show() }
         };
-        _input = input;
         
         _plot.Configuration.Zoom = false;
         _plot.Configuration.Pan = false;
@@ -58,7 +59,7 @@ public class InputDisplay : UserControl
         _plot.Plot.YLabel("Membership");
         _plot.Refresh();
         
-        var items = _functionOptions.Keys.Select(x => new ToolStripMenuItem(x)).ToArray();
+        var items = _functionOptions.Keys.Select(x => new ToolStripMenuItem(x)).OfType<ToolStripItem>().ToArray();
         _addFunction.DropDownItems.AddRange(items);
         _contextMenu.Items.Add(_setValue);
         _contextMenu.Items.Add(new ToolStripSeparator());
@@ -93,7 +94,7 @@ public class InputDisplay : UserControl
             Filter = "PNG files|*.png"
         };
         
-        fileDialog.FileOk += (s, args) =>
+        fileDialog.FileOk += (s, _) =>
         {
             if (s is not SaveFileDialog saveFileDialog) return;
             if (saveFileDialog.FileName is not { } fileName) return;
@@ -143,7 +144,7 @@ public class InputDisplay : UserControl
     {
         _removeFunction.DropDownItems.Clear();
         
-        var items = _input.MemberFunctions.Select(x => new ToolStripMenuItem(x.Name)).ToArray();
+        var items = _input.MemberFunctions.Select(x => new ToolStripMenuItem(x.Name)).OfType<ToolStripItem>().ToArray();
 
         _removeFunction.Enabled = items.Any();
         _removeFunction.DropDownItems.AddRange(items);
@@ -173,7 +174,7 @@ public class InputDisplay : UserControl
 
         foreach (var membershipFunction in _input.MemberFunctions)
         {
-            var f = _plot.Plot.AddFunction(x => membershipFunction.Function.Evaluate(x));
+            var f = _plot.Plot.AddFunction(v => membershipFunction.Function.Evaluate(v));
             f.Color = membershipFunction.Color;
 
             var y = membershipFunction.Function.Evaluate(x);

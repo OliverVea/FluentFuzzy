@@ -3,7 +3,7 @@ name: Merge to Main
 on:
   push:
     branches:
-      - $default-branch
+      - main
 
 jobs:
     push-nuget:

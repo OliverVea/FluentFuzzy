@@ -5,6 +5,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentFuzzy.Test", "test\FluentFuzzy.Test\FluentFuzzy.Test.csproj", "{90AD20D0-CEFE-486B-9F25-4F3154799B2F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{16D1C450-9355-4937-A4D7-54D33587DBFE}"
+	ProjectSection(SolutionItems) = preProject
+		src\directory.build.props = src\directory.build.props
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{0DEED023-7111-48C0-B8E6-906A9E7EFD08}"
 EndProject
@@ -15,7 +18,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "repository", "repository", 
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentFuzzy.Unity", "src\FluentFuzzy.Unity\FluentFuzzy.Unity.csproj", "{42803B31-2D18-4793-83CD-18EF17E18730}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentFuzzy.Unity.Editor", "src\FluentFuzzy.Unity.Editor\FluentFuzzy.Unity.Editor.csproj", "{D9FA3BEE-8F89-428E-8EA6-A9881B8351DA}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentFuzzy.Visualizer", "src\FluentFuzzy.Visualizer\FluentFuzzy.Visualizer.csproj", "{2F0B1E82-0C69-4998-BB41-DA8981E40BD4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{8EFA58CD-A374-4FC6-9EFA-BF909E5B7C76}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\merge.yml = .github\workflows\merge.yml
+		.github\workflows\release.yml = .github\workflows\release.yml
+		.github\workflows\test.yml = .github\workflows\test.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +45,22 @@ Global
 		{90AD20D0-CEFE-486B-9F25-4F3154799B2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90AD20D0-CEFE-486B-9F25-4F3154799B2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90AD20D0-CEFE-486B-9F25-4F3154799B2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFAF3451-4EC3-4328-A116-F9C2EA5EE884}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFAF3451-4EC3-4328-A116-F9C2EA5EE884}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFAF3451-4EC3-4328-A116-F9C2EA5EE884}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFAF3451-4EC3-4328-A116-F9C2EA5EE884}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBD90567-C27D-493A-8426-0988E99A9B2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBD90567-C27D-493A-8426-0988E99A9B2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBD90567-C27D-493A-8426-0988E99A9B2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBD90567-C27D-493A-8426-0988E99A9B2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42803B31-2D18-4793-83CD-18EF17E18730}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42803B31-2D18-4793-83CD-18EF17E18730}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42803B31-2D18-4793-83CD-18EF17E18730}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42803B31-2D18-4793-83CD-18EF17E18730}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9FA3BEE-8F89-428E-8EA6-A9881B8351DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9FA3BEE-8F89-428E-8EA6-A9881B8351DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9FA3BEE-8F89-428E-8EA6-A9881B8351DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9FA3BEE-8F89-428E-8EA6-A9881B8351DA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2F0B1E82-0C69-4998-BB41-DA8981E40BD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2F0B1E82-0C69-4998-BB41-DA8981E40BD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F0B1E82-0C69-4998-BB41-DA8981E40BD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +69,10 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{E322C064-0826-4640-8B1E-281E0C7FC211} = {16D1C450-9355-4937-A4D7-54D33587DBFE}
 		{90AD20D0-CEFE-486B-9F25-4F3154799B2F} = {0DEED023-7111-48C0-B8E6-906A9E7EFD08}
+		{DBD90567-C27D-493A-8426-0988E99A9B2A} = {0DEED023-7111-48C0-B8E6-906A9E7EFD08}
+		{42803B31-2D18-4793-83CD-18EF17E18730} = {16D1C450-9355-4937-A4D7-54D33587DBFE}
+		{D9FA3BEE-8F89-428E-8EA6-A9881B8351DA} = {16D1C450-9355-4937-A4D7-54D33587DBFE}
 		{2F0B1E82-0C69-4998-BB41-DA8981E40BD4} = {16D1C450-9355-4937-A4D7-54D33587DBFE}
+		{8EFA58CD-A374-4FC6-9EFA-BF909E5B7C76} = {CE543CA3-14BE-43BB-AA31-E80D4C55EA95}
 	EndGlobalSection
 EndGlobal
