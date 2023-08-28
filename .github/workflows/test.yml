@@ -6,17 +6,23 @@ on:
       - main
 
 jobs:   
-    verify-example:
-        name: Embed code snippets in readme
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v2
-            - uses: OliverVea/embed-md@main
+  verify-example:
+    name: 📖 Verify code snippets
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: OliverVea/embed-md@main
 
-    run-tests:
-        name: Run Tests
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v2
-            - run: python -m pip install -r ./scripts/requirements.txt
-            - run: python ./scripts/test.py
+  run-tests:
+    name: 🔥 Run Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: python ./scripts/test.py
+
+  build-projects:
+    name: 🔨 Build Projects 
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: python ./scripts/build.py

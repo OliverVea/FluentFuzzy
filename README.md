@@ -21,9 +21,9 @@ After importing the Nuget package, using FuzzyLogic is a 2-step process.
 ```cs
 // test/FluentFuzzy.Test/Example.cs#L10-L12
 
-var healthValue = 35;
-var health = new FuzzyInput(() => healthValue);
-var flee = new FuzzyOutput();
+const int healthValue = 35;
+const int health = new FuzzyInput(() => healthValue);
+const int flee = new FuzzyOutput();
 ```
 
 `FuzzyInput` requires a `Func<double>` to get the current crisp value of the input.
