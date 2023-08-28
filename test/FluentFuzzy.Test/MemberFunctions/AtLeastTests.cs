@@ -1,4 +1,4 @@
-﻿using FluentFuzzy.MemberFunctions;
+using FluentFuzzy.MemberFunctions;
 
 namespace FluentFuzzy.Test.MemberFunctions;
 
