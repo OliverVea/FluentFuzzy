@@ -1,7 +1,6 @@
-﻿using FluentFuzzy;
-using FluentFuzzy.MemberFunctions;
+﻿using FluentFuzzy.MemberFunctions;
 
-namespace FuzzyLogic.Test;
+namespace FluentFuzzy.Test;
 
 public partial class FuzzyRuleTests
 {

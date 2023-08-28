@@ -1,5 +1,4 @@
-﻿using FluentFuzzy;
-using NUnit.Framework.Constraints;
+﻿using NUnit.Framework.Constraints;
 
 namespace FluentFuzzy.Test;
 
