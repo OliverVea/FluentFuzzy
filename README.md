@@ -1,18 +1,18 @@
-# FuzzyLogic
+# FluentFuzzy
 
-FuzzyLogic is a package for doing fuzzy logic in .NET with a natural fluent syntax.
+FluentFuzzy is a package for doing fuzzy logic in .NET with a natural fluent syntax.
 
-> FuzzyLogic is very much WIP and should be expected to be updated with breaking changes.
+> FluentFuzzy is very much WIP and should be expected to be updated with breaking changes.
 
 ## Contents
 
-`FuzzyLogic` contains the core fuzzy logic functionality.
+`FluentFuzzy` contains the core fuzzy logic functionality.
 
-`FuzzyLogic.Visualization` has visualization for some `FuzzyLogic` classes.
+`FluentFuzzy.Visualization` has visualization for some `FluentFuzzy` classes.
 
 ## Using
 
-After importing the Nuget package, using FuzzyLogic is a 2-step process.
+After importing the Nuget package, using FluentFuzzy is a 2-step process.
 
 ### Setting up input and output
 

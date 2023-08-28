@@ -1,6 +1,6 @@
 ﻿using FluentFuzzy.MemberFunctions;
 
-namespace FuzzyLogic.Test.MemberFunctions;
+namespace FluentFuzzy.Test.MemberFunctions;
 
 public class LineTests
 {

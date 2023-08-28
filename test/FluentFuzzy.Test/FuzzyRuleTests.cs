@@ -1,7 +1,7 @@
 ﻿using FluentFuzzy;
 using NUnit.Framework.Constraints;
 
-namespace FuzzyLogic.Test;
+namespace FluentFuzzy.Test;
 
 public partial class FuzzyRuleTests
 {

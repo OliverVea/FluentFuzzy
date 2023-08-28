@@ -7,7 +7,7 @@
 
         <IsPackable>false</IsPackable>
         <IsTestProject>true</IsTestProject>
-        <RootNamespace>FuzzyLogic.Test</RootNamespace>
+        <RootNamespace>FluentFuzzy.Test</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>

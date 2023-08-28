@@ -1,7 +1,7 @@
 using FluentFuzzy;
 using FluentFuzzy.MemberFunctions;
 
-namespace FuzzyLogic.Test;
+namespace FluentFuzzy.Test;
 
 public class Example
 {
