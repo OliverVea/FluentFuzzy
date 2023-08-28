@@ -4,8 +4,8 @@ namespace FluentFuzzy.Visualizer.Collections;
 
 public static class FuzzyInputCollection
 {
-    private static List<FuzzyInput> _fuzzyInputs = new();
-    public static IReadOnlyList<FuzzyInput> FuzzyInputs => _fuzzyInputs;
+    private static readonly List<FuzzyInput> Inputs = new();
+    public static IReadOnlyList<FuzzyInput> FuzzyInputs => Inputs;
     
 
     public static readonly Event<InputAddedArgs> InputAdded = new();
@@ -32,14 +32,14 @@ public static class FuzzyInputCollection
 
     public static void AddFuzzyInput(FuzzyInput input)
     {
-        _fuzzyInputs.Add(input);
+        Inputs.Add(input);
         var args = new InputAddedArgs(input);
         InputAdded.Invoke(null, args);
     }
 
     public static void RemoveFuzzyInput(FuzzyInput input)
     {
-        _fuzzyInputs.Add(input);
+        Inputs.Add(input);
         var args = new InputRemovedArgs(input);
         InputRemoved.Invoke(null, args);
     }

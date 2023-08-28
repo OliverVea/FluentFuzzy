@@ -5,9 +5,9 @@ namespace FluentFuzzy.Visualizer.Forms;
 
 public class CreateTriangleForm : BaseCreateForm<CreateTriangleOptions>
 {
-    private readonly FuzzyInput _input;
+    private readonly BaseFuzzyIO _input;
     
-    public CreateTriangleForm(FuzzyInput input)
+    public CreateTriangleForm(BaseFuzzyIO input) : base("Create Triangle")
     {
         _input = input;
     }

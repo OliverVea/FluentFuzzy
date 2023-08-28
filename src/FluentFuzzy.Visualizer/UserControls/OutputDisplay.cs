@@ -1,5 +1,3 @@
-using System.ComponentModel;
-using System.Globalization;
 using FluentFuzzy.Visualizer.Collections;
 using FluentFuzzy.Visualizer.Forms;
 using ScottPlot;
@@ -7,12 +5,11 @@ using Cursor = System.Windows.Forms.Cursor;
 
 namespace FluentFuzzy.Visualizer.UserControls;
 
-public class FuzzyInputDisplay : UserControl
+public class OutputDisplay : UserControl
 {
     private const string ContextAddFunction = "Add Function";
     private const string ContextRemoveFunction = "Remove Function";
-    private const string ContextSetValue = "Set Value";
-    private const string ContextSaveImage = "Set Value";
+    private const string ContextSaveImage = "Save Image";
 
     private readonly ContextMenuStrip _contextMenu = new();
 
@@ -28,11 +25,6 @@ public class FuzzyInputDisplay : UserControl
         Text = ContextRemoveFunction
     };
 
-    private readonly ToolStripMenuItem _setValue = new()
-    {
-        Text = ContextSetValue
-    };
-
     private readonly ToolStripMenuItem _saveImage = new()
     {
         Text = ContextSaveImage
@@ -43,27 +35,24 @@ public class FuzzyInputDisplay : UserControl
         Dock = DockStyle.Fill
     };
 
-    private readonly FuzzyInput _input;
+    private readonly FuzzyOutput _output;
     
-    public FuzzyInputDisplay(FuzzyInput input)
+    public OutputDisplay(FuzzyOutput output)
     {
         _functionOptions = new Dictionary<string, Action>
         {
-            { "Triangle", () => new CreateTriangleForm(_input).Show() }
+            { "Triangle", () => new CreateTriangleForm(_output).Show() }
         };
-        _input = input;
+        _output = output;
         
-        _plot.Plot.Title(input.Name);
         _plot.Configuration.Zoom = false;
         _plot.Configuration.Pan = false;
-        _plot.Plot.XLabel("Value");
+        _plot.Plot.XLabel(output.Name);
         _plot.Plot.YLabel("Membership");
         _plot.Refresh();
         
         var items = _functionOptions.Keys.Select(x => new ToolStripMenuItem(x)).ToArray();
         _addFunction.DropDownItems.AddRange(items);
-        _contextMenu.Items.Add(_setValue);
-        _contextMenu.Items.Add(new ToolStripSeparator());
         _contextMenu.Items.Add(_addFunction);
         _contextMenu.Items.Add(_removeFunction);
         _contextMenu.Items.Add(new ToolStripSeparator());
@@ -75,21 +64,19 @@ public class FuzzyInputDisplay : UserControl
 
         RefreshPlot();
         
-        _input.FuzzyInputValueChanged.EventHandler += OnFizzyInputValueChanged;
         _plot.RightClicked += OnPlotRightClicked;
         _addFunction.DropDownItemClicked += OnAddFunctionClicked;
         _removeFunction.DropDownItemClicked += OnRemoveFunctionClicked;
-        _setValue.Click += OnSetValueClicked;
         _saveImage.Click += OnSaveImageClicked;
-        _input.MemberFunctionAdded.EventHandler += OnInputMemberFunctionAdded;
-        _input.MemberFunctionRemoved.EventHandler += OnInputMemberFunctionRemoved;
+        _output.MemberFunctionAdded.EventHandler += OnOutputMemberFunctionAdded;
+        _output.MemberFunctionRemoved.EventHandler += OnOutputMemberFunctionRemoved;
     }
 
     private void OnSaveImageClicked(object? sender, EventArgs e)
     {
         var fileDialog = new SaveFileDialog
         {
-            FileName = _input.Name,
+            FileName = _output.Name,
             DefaultExt = "png",
             AddExtension = true,
             Filter = "PNG files|*.png"
@@ -106,36 +93,18 @@ public class FuzzyInputDisplay : UserControl
         fileDialog.ShowDialog();
     }
 
-    private void OnNumberDialogClosing(object? sender, CancelEventArgs e)
-    {
-        if (sender is not NumberDialog numberDialog) return;
-        _input.SetValue(numberDialog.Value);
-    }
-
-    private void OnFizzyInputValueChanged(object? sender, EventArgs e)
-    {
-        RefreshPlot();
-    }
-
-    private void OnSetValueClicked(object? sender, EventArgs eventArgs)
-    {
-        var numberDialog = new NumberDialog(_input.Value);
-        numberDialog.Closing += OnNumberDialogClosing;
-        numberDialog.Show();
-    }
-
     private void OnRemoveFunctionClicked(object? sender, ToolStripItemClickedEventArgs e)
     {
-        _input.RemoveMemberFunction(e.ClickedItem.Text);
+        _output.RemoveMemberFunction(e.ClickedItem.Text);
     }
 
-    private void OnInputMemberFunctionRemoved(object? sender, EventArgs e)
+    private void OnOutputMemberFunctionRemoved(object? sender, EventArgs e)
     {
         RefreshPlot();
         RefreshRemoveDropDown();
     }
 
-    private void OnInputMemberFunctionAdded(object? sender, EventArgs e)
+    private void OnOutputMemberFunctionAdded(object? sender, EventArgs e)
     {
         RefreshPlot();
         RefreshRemoveDropDown();
@@ -145,7 +114,7 @@ public class FuzzyInputDisplay : UserControl
     {
         _removeFunction.DropDownItems.Clear();
         
-        var items = _input.MemberFunctions.Select(x => new ToolStripMenuItem(x.Name)).ToArray();
+        var items = _output.MemberFunctions.Select(x => new ToolStripMenuItem(x.Name)).ToArray();
 
         _removeFunction.Enabled = items.Any();
         _removeFunction.DropDownItems.AddRange(items);
@@ -167,29 +136,37 @@ public class FuzzyInputDisplay : UserControl
     {
         _plot.Plot.Clear();
 
-        var x = _input.Value;
+        var x = _output.Value;
         var valueLine = _plot.Plot.AddVerticalLine(x);
         valueLine.Color = Color.Black;
         valueLine.LineStyle = LineStyle.Dash;
         valueLine.LineWidth = 1;
 
-        foreach (var membershipFunction in _input.MemberFunctions)
+        var centroidSum = _output.MemberFunctions.Sum(f => f.Centroid.GetCentroid(1).Weight);
+        
+        foreach (var membershipFunction in _output.MemberFunctions)
         {
             var f = _plot.Plot.AddFunction(x => membershipFunction.Function.Evaluate(x));
-            f.Label = membershipFunction.Name;
             f.Color = membershipFunction.Color;
 
+            var c = membershipFunction.Centroid.GetCentroid(1);
+            var size = (float)(c.Weight / centroidSum * 25f); 
+            _plot.Plot.AddPoint(c.Value, c.Weight, shape: MarkerShape.cross, color: membershipFunction.Color, size: size);
+
             var y = membershipFunction.Function.Evaluate(x);
-            if (y > 0)
-            {
-                var p = _plot.Plot.AddPoint(x, y, membershipFunction.Color);
-                p.Text = y.ToString(CultureInfo.InvariantCulture);
-            }
+            var yText = $"{y:N}";
+            
+            f.Label = $"{membershipFunction.Name} ({yText})";
+            
+            if (y <= 0) continue;
+            
+            var p = _plot.Plot.AddPoint(x, y, membershipFunction.Color);
+            p.Text = yText;
         }
         
 
         _plot.Plot.Legend();
-        _plot.Plot.SetAxisLimits(_input.Min, _input.Max, 0, 1.1);
+        _plot.Plot.SetAxisLimits(_output.Min, _output.Max, 0, 1.1);
         _plot.Refresh();
     }
 }
