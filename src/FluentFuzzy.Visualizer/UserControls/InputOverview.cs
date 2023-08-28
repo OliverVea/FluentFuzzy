@@ -31,14 +31,14 @@ internal class InputOverview : BaseListView
     {
         if (e is not FuzzyInputCollection.InputAddedArgs args) return;
 
-        var element = new FuzzyInputDisplay(args.AddedInput);
+        var element = new InputDisplay(args.AddedInput);
         InsertElement(element);
         _functions[args.AddedInput.Name] = element;
     }
 
     protected override void OnAddButton()
     {
-        new BaseCreateForm<CreatInputOptions>().Show();
+        new BaseCreateForm<CreateInputOptions>("Create Fuzzy Input").Show();
     }
 
     protected override bool IsButtonActive()

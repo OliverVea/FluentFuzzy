@@ -9,7 +9,6 @@ public class CreateTriangleOptions : BaseCreateOption
     
     
     private readonly TextBox _nameTextBox = GetTextBox();
-
     private readonly NumericUpDown _minInput = GetNumericUpDown(Increment);
     private readonly NumericUpDown _centerInput = GetNumericUpDown(Increment);
     private readonly NumericUpDown _maxInput = GetNumericUpDown(Increment);
@@ -41,8 +40,21 @@ public class CreateTriangleOptions : BaseCreateOption
     }
 
     public override void Create() { }
+    public override void RegisterCreateCallback(Action<object?, EventArgs> callback)
+    {
+        _nameTextBox.KeyDown += (s, a) => OnInputKeyDown(s, a, callback);
+        _minInput.KeyDown += (s, a) => OnInputKeyDown(s, a, callback);
+        _centerInput.KeyDown += (s, a) => OnInputKeyDown(s, a, callback);
+        _maxInput.KeyDown += (s, a) => OnInputKeyDown(s, a, callback);
+    }
 
-    public void Create(FuzzyInput input)
+    private void OnInputKeyDown(object? sender, KeyEventArgs args, Action<object?, EventArgs> callback)
+    {
+        if (args.KeyCode != Keys.Enter) return;
+        callback(sender, args);
+    }
+
+    public void Create(BaseFuzzyIO input)
     {
         var triangle = new Triangle(
             (double)_minInput.Value, 
@@ -51,6 +63,7 @@ public class CreateTriangleOptions : BaseCreateOption
 
         input.AddMemberFunction(
             triangle, 
+            triangle,
             _nameTextBox.Text, 
             _colorPalette.Color);
     }

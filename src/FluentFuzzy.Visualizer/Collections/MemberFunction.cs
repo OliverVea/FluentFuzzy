@@ -2,11 +2,6 @@ using FuzzyLogic.Interfaces;
 
 namespace FluentFuzzy.Visualizer.Collections;
 
-public class MemberFunction
+public record MemberFunction(IMemberFunction Function, IHasCentroid Centroid, string Name, int Hash, Color Color)
 {
-    public IMemberFunction Function { get; init; }
-    public string Name { get; init; }
-    public int Antecedent { get; init; }
-    public Color Color { get; set; }
-
 }
