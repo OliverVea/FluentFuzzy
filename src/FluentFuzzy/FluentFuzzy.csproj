@@ -8,6 +8,8 @@
         <RootNamespace>FuzzyLogic</RootNamespace>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        
+        <RepositoryUrl>https://github.com/OliverVea/FluentFuzzy.git</RepositoryUrl>
     </PropertyGroup>
 
 

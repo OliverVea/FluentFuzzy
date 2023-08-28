@@ -1,0 +1,15 @@
+name: Merge to Main
+
+on:
+  push:
+    branches:
+      - $default-branch
+
+jobs:
+    push-nuget:
+        name: Push to Nuget (preview)
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - run: python -m pip install -r ./scripts/requirements.txt
+            - run: python ./scripts/deploy-nuget.py --prerelease --username DeployBot --token ${{ secrets.NUGET_API_KEY }}

@@ -18,8 +18,11 @@ After importing the Nuget package, using FuzzyLogic is a 2-step process.
 
 `FuzzyInput`s and `FuzzyOutput`s can be set up in the following manner:
 
-```csharp
-var health = new FuzzyInput(() => GetHealth());
+```cs
+// test/FluentFuzzy.Test/Example.cs#L10-L12
+
+var healthValue = 35;
+var health = new FuzzyInput(() => healthValue);
 var flee = new FuzzyOutput();
 ```
 
@@ -29,7 +32,9 @@ var flee = new FuzzyOutput();
 
 The next step is adding member functions to each input:
 
-```csharp
+```cs
+// test/FluentFuzzy.Test/Example.cs#L14-L20
+
 var low = 0;
 var medium = 1;
 var high = 2;
@@ -51,23 +56,27 @@ Custom membership functions can be created by implementing the `IMembershipFunct
 
 After the input functions, membership functions can be added to the `FuzzyOutput`
 
-```csharp
-flee.Set(low, new Triangle(-0.25, 0, 0.25))
-flee.Set(medium, new Triangle(0.25, 0.5, 0.75))
-flee.Set(high, new Triangle(0.75, 1, 1.25))
+```cs
+// test/FluentFuzzy.Test/Example.cs#L22-L24
+
+flee.Set(low, new Triangle(-0.5, 0, 0.5));
+flee.Set(medium, new Triangle(0, 0.5, 1));
+flee.Set(high, new Triangle(0.5, 1, 1.5));
 ```
 
-The only currently supported defuzzification method is a version of the centroid method. As some of the membership functions, namely `Line`, `Value` and `AtLeast` do not have useful centroids, these cannot be used as output member functions. 
+The only currently supported defuzzification method is a version of the centroid method. As some of the membership functions, namely `Line`, `Value` and `AtLeast` do not have useful centroids, these cannot be used as output member functions.
 
 Custom output membership functions can be created by implementing the `IHasCentroid` interface.
 
 ### Setting up fuzzy rules
 
-After setting up the fuzzy inputs and outputs, rules can be created to connect them. 
+After setting up the fuzzy inputs and outputs, rules can be created to connect them.
 
 Rules are created with a readable fluent syntax:
 
-```csharp
+```cs
+// test/FluentFuzzy.Test/Example.cs#L26-L28
+
 FuzzyRule.If(health.Is(high)).Then(flee.Is(low));
 FuzzyRule.If(health.Is(medium)).Then(flee.Is(medium));
 FuzzyRule.If(health.Is(low)).Then(flee.Is(high));
@@ -77,6 +86,8 @@ FuzzyRule.If(health.Is(low)).Then(flee.Is(high));
 
 After creating the fuzzy ruleset, the output can be evaluated by calling the `Evaluate` method on the output:
 
-```csharp
-Console.Log($"flee(health: {health.Value}) = {flee.Evaluate()}")
+```cs
+// test/FluentFuzzy.Test/Example.cs#L30-L30
+
+Console.WriteLine($"flee(health: {health.Value}) = {flee.Evaluate()}"); // flee(health: 35) = 0,8
 ```

@@ -1,10 +1,11 @@
 from subprocess import Popen
 
-from _root import repository_root
+from constants import TEST_ROOT
 
-dotnet_test = ['dotnet', 'test', str(repository_root / 'test' / 'FluentFuzzy.Test')]
+test_projects = TEST_ROOT.glob('**/*.Test.csproj')
 
-process = Popen(dotnet_test)
-process.wait()
+for project in test_projects:
+    dotnet_test = ['dotnet', 'test', str(project)]
 
-exit(process.returncode)
+    process = Popen(dotnet_test)
+    process.wait()
